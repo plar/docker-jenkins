@@ -5,6 +5,7 @@ Sets up a container with jenkins(Ubuntu 14.04/Oracle Java 7) installed listening
 ## Usage
 
 To build the container, run the following:
+
     #docker build -t="larkin/jenkins" .
 
 To run the container, run the following:
@@ -15,7 +16,7 @@ To run the container, run the following:
     CONTAINER ID        IMAGE                   COMMAND                CREATED             STATUS              PORTS                    NAMES
     747485faf0d8        larkin/jenkins:latest   "java -jar /opt/jenk   32 seconds ago      Up 31 seconds       0.0.0.0:8080->8080/tcp   jenkins
 
-Your jenkins instance is available here http://localhost:8080 .
+Your jenkins instance is available here [http://localhost:8080](http://localhost:8080)
 
 ## Author
 
