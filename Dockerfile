@@ -23,6 +23,12 @@ RUN \
   rm -rf /var/lib/apt/lists/* && \
   rm -rf /var/cache/oracle-jdk7-installer
 
+### Maven
+ADD http://mirror.reverse.net/pub/apache/maven/maven-3/3.3.3/binaries/apache-maven-3.3.3-bin.tar.gz /opt
+WORKDIR /opt/apache-maven-3.3.3
+RUN update-alternatives --install /usr/bin/mvn mvn /opt/apache-maven-3.3.3/bin/mvn 1
+
+### Jenkins
 ADD http://mirrors.jenkins-ci.org/war/1.615/jenkins.war /opt/jenkins.war
 RUN chmod 644 /opt/jenkins.war
 ENV JENKINS_HOME /jenkins
