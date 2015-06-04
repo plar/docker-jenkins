@@ -30,7 +30,8 @@ RUN \
 RUN wget --progress=bar:force http://mirror.reverse.net/pub/apache/maven/maven-3/3.3.3/binaries/apache-maven-3.3.3-bin.tar.gz -P /tmp/ && \
     tar xvfz /tmp/apache-maven-3.3.3-bin.tar.gz --directory /opt && \
     rm -f /tmp/apache-maven-3.3.3-bin.tar.gz && \
-    update-alternatives --install /usr/bin/mvn mvn /opt/apache-maven-3.3.3/bin/mvn 1
+    update-alternatives --install /usr/bin/mvn mvn /opt/apache-maven-3.3.3/bin/mvn 1 && \
+    mkdir -p /root/.m2
 ENV M2_HOME /opt/apache-maven-3.3.3
 
 ### Jenkins
