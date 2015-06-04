@@ -12,7 +12,7 @@ RUN \
   apt-get -y upgrade && \
   apt-get install -y build-essential && \
   apt-get install -y software-properties-common && \
-  apt-get install -y byobu curl git htop man unzip vim wget nano && \
+  apt-get install -y byobu curl git htop man unzip vim wget nano zip && \
   rm -rf /var/lib/apt/lists/*
 
 ### Install Java.
@@ -31,6 +31,7 @@ RUN wget --progress=bar:force http://mirror.reverse.net/pub/apache/maven/maven-3
     tar xvfz /tmp/apache-maven-3.3.3-bin.tar.gz --directory /opt && \
     rm -f /tmp/apache-maven-3.3.3-bin.tar.gz && \
     update-alternatives --install /usr/bin/mvn mvn /opt/apache-maven-3.3.3/bin/mvn 1
+ENV M2_HOME /opt/apache-maven-3.3.3
 
 ### Jenkins
 
@@ -38,8 +39,6 @@ ADD http://mirrors.jenkins-ci.org/war/1.615/jenkins.war /opt/jenkins.war
 RUN chmod 644 /opt/jenkins.war
 ENV JENKINS_HOME /jenkins
 ENV JAVA_HOME /usr/lib/jvm/java-7-oracle
-
-
 
 ENTRYPOINT ["java", "-jar", "/opt/jenkins.war"]
 
