@@ -39,6 +39,7 @@ ADD http://mirrors.jenkins-ci.org/war/1.615/jenkins.war /opt/jenkins.war
 RUN chmod 644 /opt/jenkins.war
 ENV JENKINS_HOME /jenkins
 ENV JAVA_HOME /usr/lib/jvm/java-7-oracle
+ENV TERM xterm
 
 ENTRYPOINT ["java", "-jar", "/opt/jenkins.war"]
 
