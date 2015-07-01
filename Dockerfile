@@ -13,6 +13,8 @@ RUN \
   apt-get install -y build-essential && \
   apt-get install -y software-properties-common && \
   apt-get install -y byobu curl git htop man unzip vim wget nano zip && \
+  apt-get install -y python2.7-dev && \
+  apt-get install -y python-pip && \
   rm -rf /var/lib/apt/lists/*
 
 ### Install Java.
