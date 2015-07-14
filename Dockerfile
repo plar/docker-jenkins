@@ -38,8 +38,8 @@ ENV M2_HOME /opt/apache-maven-3.3.3
 
 ### Jenkins
 
-ADD http://mirrors.jenkins-ci.org/war/1.617/jenkins.war /opt/jenkins.war
-RUN chmod 644 /opt/jenkins.war
+RUN wget --progress=bar:force http://mirrors.jenkins-ci.org/war/1.617/jenkins.war -P /opt/ && \
+    chmod 644 /opt/jenkins.war
 ENV JENKINS_HOME /jenkins
 ENV JAVA_HOME /usr/lib/jvm/java-7-oracle
 ENV TERM xterm
