@@ -17,6 +17,9 @@ RUN \
   apt-get install -y python-pip && \
   rm -rf /var/lib/apt/lists/*
 
+### Install AWS tools
+RUN pip install aws
+
 ### Install Java.
 
 RUN \
