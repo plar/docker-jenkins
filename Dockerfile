@@ -18,7 +18,7 @@ RUN \
   rm -rf /var/lib/apt/lists/*
 
 ### Install AWS tools
-RUN pip install aws
+RUN pip install awscli
 
 ### Install Java.
 
