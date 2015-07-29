@@ -17,6 +17,12 @@ RUN \
   apt-get install -y python-pip && \
   rm -rf /var/lib/apt/lists/*
 
+# Install PhantomJS for headless and it's dependencies.
+RUN \
+  curl -sL https://deb.nodesource.com/setup | bash - && \
+  apt-get install -y nodejs fontconfig && \
+  npm install -g phantomjs
+
 ### Install AWS tools
 RUN pip install awscli
 
