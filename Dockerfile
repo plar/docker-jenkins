@@ -56,7 +56,7 @@ ENV M2_HOME /opt/apache-maven-3.3.3
 ENV JENKINS_HOME /jenkins
 ENV TERM xterm
 
-ENTRYPOINT ["java", "-jar", "/opt/jenkins.war"]
+ENTRYPOINT ["java", "$JAVA_ARGS", "-jar", "/opt/jenkins.war"]
 
 EXPOSE 8080
 
