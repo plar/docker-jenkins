@@ -40,19 +40,19 @@ RUN \
 
 ### Maven
 RUN \
-  wget --progress=bar:force http://mirror.reverse.net/pub/apache/maven/maven-3/3.3.3/binaries/apache-maven-3.3.3-bin.tar.gz -P /tmp/ && \
-  tar xvfz /tmp/apache-maven-3.3.3-bin.tar.gz --directory /opt && \
-  rm -f /tmp/apache-maven-3.3.3-bin.tar.gz && \
-  update-alternatives --install /usr/bin/mvn mvn /opt/apache-maven-3.3.3/bin/mvn 1 && \
+  wget --progress=bar:force http://mirror.reverse.net/pub/apache/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz -P /tmp/ && \
+  tar xvfz /tmp/apache-maven-3.3.9-bin.tar.gz --directory /opt && \
+  rm -f /tmp/apache-maven-3.3.9-bin.tar.gz && \
+  update-alternatives --install /usr/bin/mvn mvn /opt/apache-maven-3.3.9/bin/mvn 1 && \
   mkdir -p /root/.m2
 
 ### Jenkins
 RUN \
-  wget --progress=bar:force http://mirrors.jenkins-ci.org/war/1.622/jenkins.war -P /opt/ && \
+  wget --progress=bar:force http://mirrors.jenkins-ci.org/war-stable/1.642.3/jenkins.war -P /opt/ && \
   chmod 644 /opt/jenkins.war
 
 ENV JAVA_HOME /usr/lib/jvm/java-7-oracle
-ENV M2_HOME /opt/apache-maven-3.3.3
+ENV M2_HOME /opt/apache-maven-3.3.9
 ENV JENKINS_HOME /jenkins
 ENV TERM xterm
 
