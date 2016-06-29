@@ -48,7 +48,7 @@ RUN \
 
 ### Jenkins
 RUN \
-  wget --progress=bar:force http://mirrors.jenkins-ci.org/war-stable/1.642.3/jenkins.war -P /opt/ && \
+  wget --progress=bar:force http://mirrors.jenkins-ci.org/war-stable/1.651.3/jenkins.war -P /opt/ && \
   chmod 644 /opt/jenkins.war
 
 ENV JAVA_HOME /usr/lib/jvm/java-7-oracle
