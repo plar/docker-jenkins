@@ -41,7 +41,7 @@ RUN wget --progress=bar:force http://mirror.reverse.net/pub/apache/maven/maven-3
     mkdir -p /root/.m2
 
 ### Jenkins
-RUN wget --progress=bar:force http://mirrors.jenkins-ci.org/war-stable/1.651.3/jenkins.war -P /opt/ && \
+RUN wget --progress=bar:force http://mirrors.jenkins-ci.org/war-stable/2.19.1/jenkins.war -P /opt/ && \
     chmod 644 /opt/jenkins.war
 
 ENV JAVA_HOME /usr/lib/jvm/java-7-oracle
